@@ -1,5 +1,10 @@
 import React from 'react'
+import Seo from "../components/Seo";
 
-export default function Test() {
-    return ( <div><h1>sdfsdf</h1></div>)
+export default function About() {
+    return (
+      <div>
+        <Seo title='about'></Seo>
+        <h1>sdfsdf</h1>
+      </div>)
 }
