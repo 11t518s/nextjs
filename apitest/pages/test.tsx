@@ -33,11 +33,9 @@ function Test() {
   };
   return (
     <>
-      {/*<form>*/}
       <button>asdfasdf</button>
       <input type="file" onChange={(data) => onFileChagned(data)} />
       <input type="submit" />
-      {/*</form>*/}
       <button onClick={onPostTestHandler}>111111111</button>
     </>
   );
