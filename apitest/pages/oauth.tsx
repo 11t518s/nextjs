@@ -9,6 +9,7 @@ function Oauth() {
   const GOOGLE_CLIENT_SECRET = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET;
 
   const REDIRECT_URI = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI;
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
   const kakaoAccessCodeUri = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
@@ -29,7 +30,7 @@ function Oauth() {
       } = kakaoAccessToken;
       await axios
         .post(
-          'http://15.164.189.187:8080/api/login/kakao',
+          `${BASE_URL}/api/login/kakao`,
           {
             access_token,
           },
@@ -53,7 +54,7 @@ function Oauth() {
       } = googleAccessToken;
       await axios
         .post(
-          'http://15.164.189.187:8080/api/login/google',
+          `${BASE_URL}/api/login/google`,
           {
             access_token,
           },
